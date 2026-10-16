@@ -19,11 +19,11 @@ export async function loadBooks(options={}){
  const names=['books','related-books','book-details','popular-books','popular-counts','curated-isbns','dataset-version','cover-bundles'];
  const values=await Promise.all(names.map(n=>fetch(`./data/${n}.json`).then(r=>{if(!r.ok)throw Error('도서 데이터 파일을 확인하세요.');return r.json();})));
  dataset=Object.fromEntries(names.map((n,i)=>[n,values[i]]));
+ if(options.restore!==false)await restoreLiveBooks(dataset);
  const coverFiles=dataset['cover-bundles']?.files||[];
   if(options.backgroundCovers&&coverFiles.length)for(const b of Object.values(dataset.books))if(b.bookImageURL?.startsWith('./assets/images/covers/'))b.bookImageURL='./assets/images/book-placeholder.svg';
  const coversReady=Promise.all(coverFiles.map(file=>fetch('./data/'+file).then(r=>{if(!r.ok)throw Error('표지 데이터를 확인하세요.');return r.json();}).then(bundle=>{for(const [isbn,image] of Object.entries(bundle)){if(!dataset.books[isbn])continue;dataset.books[isbn].bookImageURL=image;if(options.backgroundCovers){for(const img of document.querySelectorAll('img[data-isbn]'))if(img.dataset.isbn===isbn)img.src=image;const target=window.YBTI_LEGACY?.target;if(target?.isbn13===isbn){target.bookImageURL=image;const top=document.getElementById('card-top-book-img');if(top)top.src=image;}}}return bundle;})));
  if(options.backgroundCovers)coversReady.catch(()=>{});else await coversReady;
- if(options.restore!==false)await restoreLiveBooks(dataset);
  window.fetchData4LibraryJson=async url=>{const u=new URL(url,location.href),isbn=u.searchParams.get('isbn13');if(u.pathname.endsWith('/srchDtlList'))return dataset['book-details'][isbn]||{response:{}};if(u.pathname.endsWith('/recommandList'))return {response:{docs:(dataset['related-books'][isbn]?.[u.searchParams.get('type')]||[]).map(id=>({book:dataset.books[id]}))}};return {response:{docs:[]}};};
  window.resolveCuratedBookIsbn=async book=>resolveBook(book);
  window.openCuratedBookDetail=async (_b,encoded)=>window.openBookDetailModal(resolveBook(JSON.parse(decodeURIComponent(encoded))));
@@ -86,7 +86,7 @@ function startChain(book){if(!book?.isbn13){alert('이 도서는 정확한 ISBN�
 async function renderChain(){
  const book=path.at(-1)||window.YBTI_LEGACY.target;if(!book)return;const kind=chainKind;
  $('chain-book-loading').style.display='none';$('chain-book-empty').style.display='none';$('chain-books-list').replaceChildren();
- $('chain-source-img').src=book.bookImageURL||'./assets/images/book-placeholder.svg';$('chain-source-title').textContent=book.bookname;$('chain-source-author').textContent=book.authors||'';$('chain-source-loan').textContent=`꼬리물기 ${Math.max(0,path.length-1)}/2단계`;
+ $('chain-source-img').dataset.isbn=book.isbn13||'';$('chain-source-img').src=book.bookImageURL||'./assets/images/book-placeholder.svg';$('chain-source-title').textContent=book.bookname;$('chain-source-author').textContent=book.authors||'';$('chain-source-loan').textContent=`꼬리물기 ${Math.max(0,path.length-1)}/2단계`;
  let crumb=$('festival-chain-trail');if(!crumb){crumb=document.createElement('p');crumb.id='festival-chain-trail';$('chain-books-list').before(crumb);}crumb.textContent=path.map(b=>b.bookname).join(' → ');
  if(path.length>1)crumb.append(button('처음 선택한 책',()=>{path=path.slice(0,1);renderChain();}));
  if(path.length>=3){$('chain-book-empty').style.display='block';$('chain-book-empty').textContent='두 단계 탐색을 마쳤어요. 마음에 든 책에 좋아요를 남겨보세요.';$('chain-books-list').append(card(book));return;}
@@ -97,7 +97,7 @@ async function renderChain(){
 }
 async function showDetail(input,force=false){
  const token=++detailToken;
- const book=resolveBook(input);$('bookDetailModal').style.display='flex';document.body.style.overflow='hidden';window.setBookDetailBasic({...book,loanCount:book.loanCount??book.loan_count});$('book-detail-loading').style.display='none';$('book-detail-content').style.display='block';
+ const book=resolveBook(input);$('bookDetailModal').style.display='flex';document.body.style.overflow='hidden';window.setBookDetailBasic({...book,loanCount:book.loanCount??book.loan_count});document.querySelectorAll('#book-detail-cover-wrap img').forEach(img=>img.dataset.isbn=book.isbn13||'');$('book-detail-loading').style.display='none';$('book-detail-content').style.display='block';
  let status=$('festival-detail-api');if(!status){status=document.createElement('p');status.id='festival-detail-api';status.setAttribute('role','status');$('book-detail-description').before(status);}status.textContent=navigator.onLine?'저장된 도서를 표시하고 온라인 상세정보를 확인합니다…':'오프라인 · 저장된 도서 정보';let raw=dataset['book-details'][book.isbn13];if(book.isbn13&&navigator.onLine){const live=await liveBookAPI('srchDtlList',{isbn13:book.isbn13},{force});if(token!==detailToken)return;if(live){raw=live;dataset['book-details'][book.isbn13]=raw;await storeLiveBooks(dataset);}status.textContent=getLiveBookStatus().message;}const description=window.getFirstValueByKeys(raw,['description','bookDtl','bookDescription','bookIntro'])||book.description||book.reason||'책 소개 상세자료는 추가 수집 예정입니다. 제목·저자·출판사·ISBN을 먼저 확인해 주세요.';$('book-detail-description').textContent=description;let source=$('festival-detail-source');if(!source){source=document.createElement('p');source.id='festival-detail-source';source.style.cssText='font-size:.7rem;color:#64748b;margin:8px 0';$('book-detail-description').after(source);}source.replaceChildren();if(book.descriptionSource){const a=document.createElement('a');a.href=book.descriptionSource;a.target='_blank';a.rel='noopener noreferrer';a.textContent='책 소개 참고 자료';source.append(document.createTextNode('공개 서지 소개를 바탕으로 요약 · '),a);}
  const scopedCount=book.loanCount??book.loan_count??null;const count=scopedCount??(raw?window.extractLoanCountFromDetail(raw):null);$('book-detail-loan').textContent=count!=null?`🔥 ${Number(count).toLocaleString()}회 대출${scopedCount==null?' · 전국 전체기간 상세 집계':''}`:'수집된 대출횟수 없음';
  window.renderBookDetailTrend(raw?window.extractMonthlyLoanTrend(raw):[]);
