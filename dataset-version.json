@@ -1,0 +1,1438 @@
+{
+  "version": "2026.10.14-expanded",
+  "collectedAt": "2026-10-14T14:49:14.856250+00:00",
+  "source": "도서관 정보나루",
+  "manual": "v20260620",
+  "loanPeriod": {
+    "start": "2026-07-11",
+    "end": "2026-10-11"
+  },
+  "curatedMatches": 45,
+  "unresolvedCurated": [],
+  "books": 2771,
+  "localCovers": 2212,
+  "relatedRoots": 229,
+  "detailRecords": 44,
+  "errors": [],
+  "pendingQueries": [
+    {
+      "operation": "recommandList",
+      "parameters": {
+        "isbn13": "9791196750459",
+        "type": "mania"
+      }
+    },
+    {
+      "operation": "recommandList",
+      "parameters": {
+        "isbn13": "9791187142430",
+        "type": "mania"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788901150598",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788901260716",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788901294179",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788925542966",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788925591698",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932404349",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932473369",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932473802",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932474274",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932474892",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932475011",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788932909240",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788934949107",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788934950073",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788934950967",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788934982975",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788934996873",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788936438838",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788936439743",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788936439965",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937429194",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937460258",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937460296",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937460500",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937460753",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937462061",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788937462436",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788947527750",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788947540674",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788947544092",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788947547031",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788947547161",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954618724",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954625470",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954635356",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954638401",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954640688",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954682152",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954693509",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788954699075",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788959897223",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788960866140",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788960902855",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788963528731",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788965701811",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788965702917",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788968332845",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788968334948",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788970129341",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788972913641",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788973223312",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788983711892",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788983716897",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788983719201",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788992714815",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788992783880",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788993734898",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788993952773",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788993952858",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788994015972",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788994142258",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788994741567",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788996104803",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788997575336",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788997962129",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788998338329",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788998441074",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788998441081",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791130629636",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791130639895",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791130646381",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791139708899",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791139716269",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791140714575",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791140718481",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791141602376",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791141602451",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791141616144",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791141617226",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791155816462",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791141601300",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791158160807",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791158462338",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791158511081",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791158512095",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791160022889",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791161571379",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791161571768",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791162141786",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791162540015",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791162544259",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791164130320",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791164136452",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791164137879",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791164138715",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791165211387",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791165219352",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791167740021",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791167740984",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791167741677",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791167742063",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168091535",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168091542",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168091559",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168091566",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168091573",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168091580",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168340169",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168341746",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168342941",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168410541",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168414488",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168415355",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791157061631",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168416598",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168416628",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168418424",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168419018",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168473690",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791169851053",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791170402206",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791170437260",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791173323027",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791173470615",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791173471780",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791185014470",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791185121185",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791185121246",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791185446349",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791186602416",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791186748138",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791187142430",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791187142515",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791187165002",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791187512417",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791187856313",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791188343478",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791188605095",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791188835027",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791189995638",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791190078009",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791190403283",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791190687034",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191056334",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191056372",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191056471",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191114225",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191114768",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191119640",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191280333",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791191891287",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192248349",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192300818",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192372730",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192389325",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192504216",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192504230",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192504261",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192504278",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9788934995791",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193238691",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193506516",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193528907",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193712825",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193904671",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193937686",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791193939130",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791194368175",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791194530701",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791195463800",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791195522125",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791195522170",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791195847433",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791196394578",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791197413025",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791197504136",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791198026811",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791198517425",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791198754080",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791192836188",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168415409",
+        "loaninfoYN": "Y"
+      }
+    },
+    {
+      "operation": "srchDtlList",
+      "parameters": {
+        "isbn13": "9791168411692",
+        "loaninfoYN": "Y"
+      }
+    }
+  ],
+  "collectionMode": "incremental-live",
+  "editionRule": "정규화 제목·저자 일치 후보 중 대출건수 우선, ISBN 순으로 판본 선택. 미일치 도서는 원본 텍스트만 제공.",
+  "coverAttempts": 2584,
+  "coverNote": "검증된 큐레이션·연령별 추천을 우선하여 표지 수집 범위 확대. 미수집 표지는 로컬 안내 이미지.",
+  "contentUpdatedAt": "2026-10-13T07:26:21.593827+00:00",
+  "userSuppliedIsbns": [
+    "9791191891492"
+  ],
+  "loanScope": "전국 정보나루 참여 도서관 · 선택 연령·분류 및 집계기간 기준",
+  "apiRecheck": {
+    "at": "2026-10-14T14:49:14.856250+00:00",
+    "status": "success"
+  },
+  "expansion": {
+    "at": "2026-10-14T14:49:14.856250+00:00",
+    "beforeBooks": 1821,
+    "afterBooks": 2771,
+    "newBooks": 950,
+    "apiCalls": 140,
+    "budget": 140,
+    "haltedByLimit": false,
+    "errors": [
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "1",
+          "from_age": 30,
+          "to_age": 39
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "81",
+          "from_age": 50,
+          "to_age": 100
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "18",
+          "from_age": 8,
+          "to_age": 13
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "6",
+          "from_age": 8,
+          "to_age": 13
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "98",
+          "from_age": 8,
+          "to_age": 13
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "18",
+          "from_age": 14,
+          "to_age": 19
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "loanItemSrch",
+        "parameters": {
+          "startDt": "2026-07-11",
+          "endDt": "2026-10-11",
+          "pageSize": 40,
+          "pageNo": 2,
+          "kdc": "6",
+          "from_age": 14,
+          "to_age": 19
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "recommandList",
+        "parameters": {
+          "isbn13": "9791196750459",
+          "type": "mania"
+        },
+        "errorType": "JSONDecodeError"
+      },
+      {
+        "operation": "recommandList",
+        "parameters": {
+          "isbn13": "9791187142430",
+          "type": "mania"
+        },
+        "errorType": "JSONDecodeError"
+      }
+    ]
+  }
+}
