@@ -10,7 +10,7 @@ function fail(message){notice.textContent=message;}
 window.addEventListener('ybti:result',e=>{completeResult(e.detail.type).then(()=>refreshCommunity()).then(()=>renderQR(e.detail.type)).catch(()=>fail('기록 저장에 실패했습니다. 운영자에게 알려주세요.'));});
 window.addEventListener('ybti:reset',()=>{resetSession();document.getElementById('regForm').reset();refreshLikeButtons();document.getElementById('festival-qr')?.replaceChildren();});
 try{
- await loadBooks({backgroundCovers:true});await loadLibraries();installRecommendations();installShare();document.querySelectorAll('[data-app-ready]').forEach(b=>b.disabled=false);
+ notice.textContent='도서와 표지를 준비하고 있어요. 처음에는 잠시 걸릴 수 있습니다.';await loadBooks();await loadLibraries();installRecommendations();installShare();document.querySelectorAll('[data-app-ready]').forEach(b=>b.disabled=false);
  const types=window.YBTI_LEGACY.types;
  const grid=document.getElementById('known-result-type-grid');grid.replaceChildren();
  for(const [code,type] of Object.entries(types)){const button=document.createElement('button');button.type='button';button.innerHTML=window.getOfficialYongYongSVG(code,64);const label=document.createElement('div');label.textContent=code+' '+type.alias;button.append(label);button.onclick=()=>{setEntry('known_result');document.getElementById('intro-overlay').style.display='none';document.body.classList.remove('quest-modal-open');window.showFinalResult(code);};grid.append(button);}
