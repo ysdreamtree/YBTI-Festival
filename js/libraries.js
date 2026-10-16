@@ -11,7 +11,7 @@ export async function loadLibraries(){
 export function renderLibraryMap(stats){
  const wrap=document.getElementById('festival-library-map');if(!wrap||!libraries.length)return;
  wrap.replaceChildren();const h=document.createElement('h3');h.textContent='🗺️ 도서관별 푸용이 독서지도';wrap.append(h);
- const note=document.createElement('p');note.className='festival-map-note';note.textContent=`${stats.scope==='central'?'중앙 집계':'이 기기·가져온 백업 기준'} · 현장 체험 ${stats.completed||0}명 · 도서관은 자주 가는 곳을 선택한 참여자 기준입니다. 복수 선택으로 비율 합계가 100%를 넘을 수 있어요. 푸용이는 대표 독서유형, 숫자는 참여자 수입니다. 지도는 위치 안내도입니다.`;wrap.append(note);
+ const note=document.createElement('p');note.className='festival-map-note';note.textContent=`${stats.scope==='central'?'시트 집계 + 이 기기 새 기록':stats.scope==='cached-central'?'마지막 시트 집계 + 이 기기 새 기록 (오프라인)':'이 기기·가져온 백업 기준'} · 현장 체험 ${stats.completed||0}명 · 도서관은 자주 가는 곳을 선택한 참여자 기준입니다. 복수 선택으로 비율 합계가 100%를 넘을 수 있어요. 푸용이는 대표 독서유형, 숫자는 참여자 수입니다. 지도는 위치 안내도입니다.`;wrap.append(note);
  const canvas=document.createElement('div');canvas.className='festival-library-canvas';const img=document.createElement('img');img.src='./assets/images/library-map.png';img.alt='용산구 도서관 위치 안내도';canvas.append(img);
  const distribution=counts=>Object.entries(counts||{}).filter(([,n])=>n>0).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
  const rowFor=place=>place.venue?{count:stats.completed||0,ratio:100,typeCounts:stats.typeCounts||{}}:(stats.libraryStats||[]).find(r=>r.name===place.name)||{count:0,ratio:0,typeCounts:{}};

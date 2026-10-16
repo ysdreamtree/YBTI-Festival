@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script>if(/^(T|D)(G|S)(I|O)(W|P)$/.test(new URLSearchParams(location.search).get('type')||''))document.documentElement.classList.add('qr-result-entry');</script>
+<style>.qr-result-entry #intro-overlay,.qr-result-entry .retro-game-hero,.qr-result-entry #board-section-container{display:none!important}.qr-result-entry body.quest-modal-open{overflow:auto!important}#mobile-result-loading{display:none}.qr-result-entry #mobile-result-loading{display:block;text-align:center;padding:32px 16px;font-weight:800}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>휴대폰 결과 · 2026 용산구 책축제 YBTI 독서 성향 퀘스트 with 푸용이 🦖</title>
@@ -19,6 +21,7 @@
   
 <link rel="stylesheet" href="./assets/css/original.css"><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#6366f1"></head>
 <body>
+<p id="mobile-result-loading" role="status">내 푸용이와 추천책을 불러오고 있어요 📚</p>
 
   <!-- 🎬 접속 즉시 표시되는 인트로 모달 -->
   <div id="intro-overlay" role="dialog" aria-modal="true" aria-labelledby="intro-title">

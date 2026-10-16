@@ -3,22 +3,23 @@ import {isComic} from './comics.js';
 import {allEvents,getSetting} from './db.js';
 import {aggregateEvents,bookKey} from './statistics.js';
 import {currentSession,logEvent} from './session.js';
+import {communitySummary} from './community-summary.js';
 import {publicSnapshot} from './central.js';
 let snapshot={recommendations:[],typeCounts:{},participants:[]},mapStats;
 
 const $=id=>document.getElementById(id);
 export async function refreshCommunity(){
  const hidden=(await getSetting('hiddenRecommendations'))?.value||[];
- const server=await publicSnapshot();
- snapshot=aggregateEvents(await allEvents(),window.YBTI_LEGACY.types,hidden);
+ const server=await publicSnapshot();const events=await allEvents();
+ snapshot=aggregateEvents(events,window.YBTI_LEGACY.types,hidden);
  if(server){const tombstones=new Set([...hidden,...server.hiddenIds]);snapshot.recommendations=[...new Map([...snapshot.recommendations,...server.recommendations].map(r=>[r.id,r])).values()].filter(r=>!tombstones.has(r.id));}
- window.YBTI_LEGACY.setParticipants(snapshot.participants);
- mapStats=server?{...server.summary,scope:'central'}:{...snapshot,scope:'local'};window.renderOrganizationMap();
+ window.YBTI_LEGACY.setParticipants(snapshot.participants);window.YBTI_PUBLIC_RECOMMENDATIONS=snapshot.recommendations;
+ mapStats=communitySummary(server,events,window.YBTI_LEGACY.types,hidden);window.YBTI_COMMUNITY_SUMMARY=mapStats;window.renderOrganizationMap();window.renderTasteNeighbors();window.renderYbtiParticipantPicks();
  return snapshot;
 }
 export function installRecommendations(){
  const baseRender=window.renderOrganizationMap;window.renderOrganizationMap=()=>{baseRender();renderLibraryMap(mapStats||snapshot);};
- window.getStoredStats=()=>({...snapshot.typeCounts});
+ window.getStoredStats=()=>({...mapStats?.typeCounts||snapshot.typeCounts});
  window.openStatsModal=()=>{document.getElementById('statsModal').style.display='flex';window.renderAdminStatsList();};
  window.renderYbtiParticipantPicks=()=>renderRecommendations($('ybti-employee-picks-list'),snapshot.recommendations.filter(r=>r.ybti===window.YBTI_LEGACY.type));
  window.openParticipantBookModal=()=>{renderRecommendations($('employee-book-list'),snapshot.recommendations);$('employee-book-summary').textContent=`이 기기·가져온 백업 기준 ${snapshot.recommendations.length}건 추천`; $('employeeBookModal').style.display='flex';document.body.style.overflow='hidden';};

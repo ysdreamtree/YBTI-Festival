@@ -1075,6 +1075,7 @@
     const YBTI_PARTICIPANT_CACHE_TTL = 45 * 1000;
 
     function calculateYbtiDistribution() {
+      if(window.YBTI_COMMUNITY_SUMMARY)return {...window.YBTI_COMMUNITY_SUMMARY.typeCounts};
       const counts = {};
       Object.keys(ybtiResults).forEach(k => counts[k] = 0);
       PARTICIPANTS.forEach(p => {
@@ -1104,9 +1105,9 @@
     }
 
     function renderTasteNeighbors() {
-      const total = PARTICIPANTS.length;
+      const total = window.YBTI_COMMUNITY_SUMMARY?.completed ?? PARTICIPANTS.length;
       const same = PARTICIPANTS.filter(p => p?.ybti === currentResultCode);
-      const sameCount = same.length;
+      const sameCount = window.YBTI_COMMUNITY_SUMMARY?.typeCounts?.[currentResultCode] ?? same.length;
       const ratio = total ? Math.round(sameCount / total * 100) : 0;
       const countEl = document.getElementById('taste-same-count');
       if (!countEl) return;
@@ -1123,7 +1124,7 @@
       document.getElementById('taste-library-summary').innerText = topGroup('library');
 
       const books = {};
-      same.forEach(p => {
+      (window.YBTI_PUBLIC_RECOMMENDATIONS||same).filter(p=>p.ybti===currentResultCode).forEach(p => {
         const title=String(p?.bookname||'').trim();
         if(!title) return;
         const author=String(p?.authors||'').trim();
@@ -1138,7 +1139,7 @@
     }
 
     function renderOrganizationMap() {
-      const total = PARTICIPANTS.length;
+      const total = window.YBTI_COMMUNITY_SUMMARY?.completed ?? PARTICIPANTS.length;
       const totalEl = document.getElementById('org-total-count');
       if (!totalEl) return;
       totalEl.innerText = `${total}명`;
@@ -1173,7 +1174,7 @@
 
       const commentsWrap=document.getElementById('org-employee-comments-list');
       if(commentsWrap){
-        const comments=PARTICIPANTS.filter(p=>String(p?.comment||'').trim()).slice().reverse().slice(0,12);
+        const comments=(window.YBTI_PUBLIC_RECOMMENDATIONS||PARTICIPANTS).filter(p=>String(p?.comment||'').trim()).slice().reverse().slice(0,12);
         commentsWrap.innerHTML=comments.length ? comments.map(p=>{
           const code=String(p.ybti||'-'); const alias=ybtiResults[code]?.alias||'';
           return `<div style="background:#FAF8F5;border:1.5px solid #CBD5E1;border-radius:14px;padding:0.85rem 0.9rem;"><div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="font-size:0.7rem;font-weight:900;color:#FFF;background:#6366F1;border:1.5px solid #1E293B;border-radius:100px;padding:2px 8px;">${escapeHtml(code)}</span><strong style="font-size:0.76rem;color:#475569;">${escapeHtml(alias)}</strong></div><p style="font-size:0.82rem;color:#1E293B;font-weight:800;line-height:1.55;">“${escapeHtml(String(p.comment||'').trim())}”</p></div>`;

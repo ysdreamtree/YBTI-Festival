@@ -18,7 +18,10 @@ export async function loadBooks(options={}){
  const names=['books','related-books','book-details','popular-books','popular-counts','curated-isbns','dataset-version','cover-bundles'];
  const values=await Promise.all(names.map(n=>fetch(`./data/${n}.json`).then(r=>{if(!r.ok)throw Error('도서 데이터 파일을 확인하세요.');return r.json();})));
  dataset=Object.fromEntries(names.map((n,i)=>[n,values[i]]));
- const bundles=await Promise.all((dataset['cover-bundles']?.files||[]).map(file=>fetch('./data/'+file).then(r=>{if(!r.ok)throw Error('표지 데이터를 확인하세요.');return r.json();})));for(const bundle of bundles)for(const [isbn,image] of Object.entries(bundle))if(dataset.books[isbn])dataset.books[isbn].bookImageURL=image;
+ const coverFiles=dataset['cover-bundles']?.files||[];
+  if(options.backgroundCovers&&coverFiles.length)for(const b of Object.values(dataset.books))if(b.bookImageURL?.startsWith('./assets/images/covers/'))b.bookImageURL='./assets/images/book-placeholder.svg';
+ const coversReady=Promise.all(coverFiles.map(file=>fetch('./data/'+file).then(r=>{if(!r.ok)throw Error('표지 데이터를 확인하세요.');return r.json();}).then(bundle=>{for(const [isbn,image] of Object.entries(bundle)){if(!dataset.books[isbn])continue;dataset.books[isbn].bookImageURL=image;if(options.backgroundCovers){for(const img of document.querySelectorAll('img[data-isbn]'))if(img.dataset.isbn===isbn)img.src=image;const target=window.YBTI_LEGACY?.target;if(target?.isbn13===isbn){target.bookImageURL=image;const top=document.getElementById('card-top-book-img');if(top)top.src=image;}}}return bundle;})));
+ if(options.backgroundCovers)coversReady.catch(()=>{});else await coversReady;
  if(options.restore!==false)await restoreLiveBooks(dataset);
  window.fetchData4LibraryJson=async url=>{const u=new URL(url,location.href),isbn=u.searchParams.get('isbn13');if(u.pathname.endsWith('/srchDtlList'))return dataset['book-details'][isbn]||{response:{}};if(u.pathname.endsWith('/recommandList'))return {response:{docs:(dataset['related-books'][isbn]?.[u.searchParams.get('type')]||[]).map(id=>({book:dataset.books[id]}))}};return {response:{docs:[]}};};
  window.resolveCuratedBookIsbn=async book=>resolveBook(book);
@@ -54,7 +57,7 @@ export function addCuratedLikes(){
  document.querySelectorAll('#ybti-curated-picks-list > div').forEach((card,i)=>{
   if(!profile.picks[i])return;const book=resolveBook(profile.picks[i]);
   if(!card.querySelector('.festival-curated-cover')){
-   const cover=document.createElement('img');cover.className='festival-curated-cover';cover.src=book.bookImageURL||'./assets/images/book-placeholder.svg';cover.alt=profile.picks[i].bookname+' 표지';cover.loading='lazy';cover.onerror=()=>{cover.onerror=null;cover.src='./assets/images/book-placeholder.svg';};card.firstElementChild.prepend(cover);
+   const cover=document.createElement('img');cover.className='festival-curated-cover';cover.src=book.bookImageURL||'./assets/images/book-placeholder.svg';cover.dataset.isbn=book.isbn13||'';cover.alt=profile.picks[i].bookname+' 표지';cover.loading='lazy';cover.onerror=()=>{cover.onerror=null;cover.src='./assets/images/book-placeholder.svg';};card.firstElementChild.prepend(cover);
    const facts=document.createElement('p');facts.className='festival-curated-facts';facts.textContent=[book.isbn13?'ISBN '+book.isbn13:''].filter(Boolean).join(' · ');card.firstElementChild.append(facts);
   }
   if(!card.querySelector('[data-like-key]'))card.lastElementChild.append(likeButton(book));
