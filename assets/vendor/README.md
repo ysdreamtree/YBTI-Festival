@@ -1,0 +1,1 @@
+고정 버전 로컬 자산: html2canvas 1.4.1, canvas-confetti 1.6.0, Chart.js 4.4.7, qrcode-generator 1.4.4, Font Awesome 6.4.0, Plus Jakarta Sans(fontsource-variable 5.1.0). 각 자산의 LICENSE 파일과 qrcode.js 상단 MIT 고지를 함께 보존합니다. 한글 폰트는 이 기기의 시스템 폰트를 사용합니다.
